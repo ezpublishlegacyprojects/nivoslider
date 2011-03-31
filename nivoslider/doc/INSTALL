@@ -1,0 +1,37 @@
+ Installation
+ ================
+ 1) Copy nivoslider into 'extension' folder
+  
+ 2) Install class package -> nivoslider/packages/nivoslider_classes-1.0-1.ezpkg
+    In administrator user interface, click 'setup' tab->'packages', Import New Package.
+	
+ 3) Activate nivoslider
+   In administrator user interface, click 'setup' tab->'extensions' menu, select 'ganttchart', click button 'Apply Changes'.
+   or in settings/override/site.ini.append.php, add acivation configuration under "ExtensionSettings" section:
+     [ExtensionSettings]
+     ActiveExtensions[]=ganttchart
+
+ 4) Regenerate autoloads
+    In administrator user interface, click 'setup' tab->'extensions' menu, select 'ganttchart', click button 'Regenerate autoload arrays for extensions',
+    or in eZ Publish installation folder, run "php bin/php/ezpgenerateautoloads.php -e"
+    
+ 5) Clear cache
+    Clear INI and template caches. (from admin 'Setup' tab or commandline)
+	
+
+Usage
+=========
+Create a Nivo Slider
+
+Inside the created task folder create Nivo Slider Image.
+
+Embed the Nivo Slider on evry XML block you want.
+
+
+
+
+
+FAQ
+========
+How to modify the size of the slider?
+Modify the ini file image.ini section nivoslider property Filters.
