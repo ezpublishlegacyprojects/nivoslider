@@ -32,7 +32,7 @@
                          height="{$child.data_map.image.content[nivoslider].height}"
                          alt=""
                          {if $child.data_map.image.content.alternative_text|ne("")}title="#htmlcaption{$i}"{/if}
-                         src="{$child.data_map.image.content[nivoslider].url|ezurl(,'full')}" />
+                         src="{$child.data_map.image.content[nivoslider].url|ezurl('no','full')}" />
                     {if $child.data_map.url.content|ne("")}</a>{/if}
                         
                     {if $child.data_map.image.content.alternative_text|ne("")}

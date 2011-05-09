@@ -6,13 +6,13 @@
     In administrator user interface, click 'setup' tab->'packages', Import New Package.
 	
  3) Activate nivoslider
-   In administrator user interface, click 'setup' tab->'extensions' menu, select 'ganttchart', click button 'Apply Changes'.
-   or in settings/override/site.ini.append.php, add acivation configuration under "ExtensionSettings" section:
+   In administrator user interface, click 'setup' tab->'extensions' menu, select 'nivoslider', click button 'Apply Changes'.
+   or in settings/override/site.ini.append.php, add activation configuration under "ExtensionSettings" section:
      [ExtensionSettings]
-     ActiveExtensions[]=ganttchart
+     ActiveExtensions[]=nivoslider
 
  4) Regenerate autoloads
-    In administrator user interface, click 'setup' tab->'extensions' menu, select 'ganttchart', click button 'Regenerate autoload arrays for extensions',
+    In administrator user interface, click 'setup' tab->'extensions' menu, select 'nivoslider', click button 'Regenerate autoload arrays for extensions',
     or in eZ Publish installation folder, run "php bin/php/ezpgenerateautoloads.php -e"
     
  5) Clear cache
@@ -25,7 +25,7 @@ Create a Nivo Slider
 
 Inside the created task folder create Nivo Slider Image.
 
-Embed the Nivo Slider on evry XML block you want.
+Embed the Nivo Slider on every XML block you want.
 
 
 

@@ -1,5 +1,5 @@
 <?php
-class GanttChartInfo
+class NivoSlider
 {
     static function info()
     {
