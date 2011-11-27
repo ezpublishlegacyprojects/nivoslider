@@ -14,8 +14,8 @@
             {foreach $whs as $wh }
             <style type="text/css">
                 #slider {ldelim}                  
-                    width:{$wh.data_map.image.content[nivoslider].width}px;
-                    height:{$wh.data_map.image.content[nivoslider].height}px;
+                    width:{$wh.data_map.image.content[nivoslider_embed].width}px;
+                    height:{$wh.data_map.image.content[nivoslider_embed].height}px;
                 {rdelim}
             </style>
             {/foreach}     
@@ -28,11 +28,11 @@
                 {def $i=0}
                 {foreach $children as $child }
                     {if $child.data_map.url.content|ne("")}<a href="{$child.data_map.url.content}">{/if}
-                    <img width="{$child.data_map.image.content[nivoslider].width}"
-                         height="{$child.data_map.image.content[nivoslider].height}"
+                    <img width="{$child.data_map.image.content[nivoslider_embed].width}"
+                         height="{$child.data_map.image.content[nivoslider_embed].height}"
                          alt=""
                          {if $child.data_map.image.content.alternative_text|ne("")}title="#htmlcaption{$i}"{/if}
-                         src="{$child.data_map.image.content[nivoslider].url|ezurl('no','full')}" />
+                         src="{$child.data_map.image.content[nivoslider_embed].url|ezurl('no','full')}" />
                     {if $child.data_map.url.content|ne("")}</a>{/if}
                         
                     {if $child.data_map.image.content.alternative_text|ne("")}
@@ -49,7 +49,7 @@
             $(window).load(function() {ldelim}
                 $('#slider').nivoSlider(
                     {ldelim}
-                    effect : '{attribute_view_gui attribute=$object.data_map.effect}',
+                    effect : '{attribute_view_gui attribute=$object.data_map.effect}',       
                     slices : {attribute_view_gui attribute=$object.data_map.slices},
                     boxCols : {attribute_view_gui attribute=$object.data_map.boxcols},
                     boxRows : {attribute_view_gui attribute=$object.data_map.boxrows},
@@ -60,13 +60,27 @@
                     controlNav : false,
                     controlNavThumbs:false,
                     controlNavThumbsFromRel:false,
+                    {*controlNavThumbsSearch: '.jpg', *}
+                    {*controlNavThumbsReplace: '_thumb.jpg',*}
                     keyboardNav : {if $object.data_map.keyboardnav.content}true{else}false{/if}, 
                     pauseOnHover : {if $object.data_map.pauseonhover.content}true{else}false{/if}, 
                     manualAdvance : {if $object.data_map.manualadvance.content}true{else}false{/if}, 
-                    captionOpacity : {attribute_view_gui attribute=$object.data_map.captionopacity}
+                    captionOpacity : {attribute_view_gui attribute=$object.data_map.captionopacity},
+                    prevText : '{$object.data_map.prevtext.content}',
+                    nextText : '{$object.data_map.nexttext.content}',
+                    randomStart : {if $object.data_map.randomstart.content}true{else}false{/if}
+                    {*
+                    ,
+                    afterChange: function(){}, // Triggers after a slide transition
+                    slideshowEnd: function(){}, // Triggers after all slides have been shown
+                    lastSlide: function(){}, // Triggers when last slide is shown
+                    afterLoad: function(){} // Triggers when slider has loaded
+                    *}
                     {rdelim}                
                 );
             {rdelim});
         </script>
+        
+   
     </div>
 </div>           

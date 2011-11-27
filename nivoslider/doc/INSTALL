@@ -2,7 +2,7 @@
  ================
  1) Copy nivoslider into 'extension' folder
   
- 2) Install class package -> nivoslider/packages/nivoslider_classes-1.0-1.ezpkg
+ 2) Install class package -> nivoslider/packages/nivoslider_class-1.0-1.ezpkg
     In administrator user interface, click 'setup' tab->'packages', Import New Package.
 	
  3) Activate nivoslider
