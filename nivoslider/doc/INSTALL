@@ -15,7 +15,18 @@
     In administrator user interface, click 'setup' tab->'extensions' menu, select 'nivoslider', click button 'Regenerate autoload arrays for extensions',
     or in eZ Publish installation folder, run "php bin/php/ezpgenerateautoloads.php -e"
     
- 5) Clear cache
+ 5) For each site acces ( excluding the adimn siteacces) appen to override.ini.append.php this code :
+
+[full_nivoslider]
+Source=node/view/full.tpl
+
+MatchFile=full/nivoslider.tpl
+
+Subdir=templates
+
+Match[class_identifier]=nivoslider
+
+ 6) Clear cache
     Clear INI and template caches. (from admin 'Setup' tab or commandline)
 	
 
@@ -35,3 +46,20 @@ FAQ
 ========
 How to modify the size of the slider?
 Modify the ini file image.ini section nivoslider property Filters.
+
+What do I do if I find a bug?
+Please report all bugs on the Forum of NivoSlider Ez Project page ( http://projects.ez.no/nivoslider/forum )
+
+FAQ From NivoSlider
+========
+Does the slider support transparent PNG’s?
+No. Due to the way slide transitions work it will look weird.
+
+Can I use images that are different sizes?
+No. Once the slider has loaded it won’t change size (it is set to the size of the largest image). So make sure all of your images are the same size.
+
+My images dissapear in IE and Opera
+If you are using links on all of your images they might do strange things in IE and Opera. To solve this simply add the following CSS rule:
+#slider a{
+    display:block;
+}

@@ -5,7 +5,7 @@
 DesignExtensions[]=nivoslider
 
 [JavaScriptSettings]
-FrontendJavaScriptList[]=jquery-1.6.4.min.js
+FrontendJavaScriptList[]=jquery-1.7.1.min.js
 FrontendJavaScriptList[]=jquery.nivo.slider.pack.js
 
 

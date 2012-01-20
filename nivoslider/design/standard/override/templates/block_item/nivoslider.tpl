@@ -31,7 +31,8 @@
                      height="{$child.data_map.image.content[nivoslider_block_item].height}"
                      alt=""
                      {if $child.data_map.image.content.alternative_text|ne("")}title="#htmlcaption{$i}"{/if}
-                     src="{$child.data_map.image.content[nivoslider_block_item].url|ezurl('no','full')}" />
+                    {*$child.data_map.image.content[nivoslider_full].url|ezurl('no','full')*}
+                    src="{$child.data_map.image.content.nivoslider_embed.full_path} />
                 {if $child.data_map.url.content|ne("")}</a>{/if}
                     
                 {if $child.data_map.image.content.alternative_text|ne("")}

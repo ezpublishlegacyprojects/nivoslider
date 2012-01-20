@@ -6,11 +6,11 @@ MatchFile=embed/nivoslider.tpl
 Subdir=templates
 Match[class_identifier]=nivoslider
 
-[full_nivoslider]
-Source=node/view/full.tpl
-MatchFile=full/nivoslider.tpl
-Subdir=templates
-Match[class_identifier]=nivoslider
+#[full_nivoslider]
+#Source=node/view/full.tpl
+#MatchFile=full/nivoslider.tpl
+#Subdir=templates
+#Match[class_identifier]=nivoslider
 
 [block_item_nivoslider]
 Source=node/view/block_item.tpl
