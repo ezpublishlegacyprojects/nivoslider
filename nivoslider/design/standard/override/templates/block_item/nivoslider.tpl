@@ -1,3 +1,6 @@
+{* NivoSlider - Block Item view *}
+{ezscript_require('ezjsc::jquery')}
+{ezscript_require('jquery.nivo.slider.pack.js')}
 <div class="class-nivoslider float-break">
     
     {def $classes = array( 'nivoslider_image' )}
@@ -46,7 +49,8 @@
     {/if}   
 
     <script type="text/javascript">
-        $(window).load(function() {ldelim}
+        //<![CDATA[
+        jQuery(document).ready(function($){ldelim}
             $('#slider').nivoSlider(
                 {ldelim}
                 effect : '{attribute_view_gui attribute=$node.data_map.effect}',       
@@ -79,6 +83,7 @@
                 {rdelim}                
             );
         {rdelim});
+        //]]>
     </script>
     
 </div>

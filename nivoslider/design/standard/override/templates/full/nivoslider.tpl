@@ -1,4 +1,6 @@
 {* NivoSlider - Full view *}
+{ezscript_require('ezjsc::jquery')}
+{ezscript_require('jquery.nivo.slider.pack.js')}
 <div class="border-box">
     <div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
     <div class="border-ml"><div class="border-mr"><div class="border-mc float-break">
@@ -56,7 +58,8 @@
             {/if}   
         
             <script type="text/javascript">
-                $(window).load(function() {ldelim}
+                //<![CDATA[
+                jQuery(document).ready(function($){ldelim}
                     $('#slider').nivoSlider(
                         {ldelim}
                         effect : '{attribute_view_gui attribute=$node.data_map.effect}',       
@@ -89,6 +92,7 @@
                         {rdelim}                
                     );
                 {rdelim});
+                //]]>
             </script>
             
         </div>

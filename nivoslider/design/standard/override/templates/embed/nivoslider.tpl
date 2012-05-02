@@ -1,4 +1,6 @@
 {* NivoSlider - Embed view *}
+{ezscript_require('ezjsc::jquery')}
+{ezscript_require('jquery.nivo.slider.pack.js')}
 <div class="content-view-embed">
     <div class="class-nivoslider">
         {def $classes = array( 'nivoslider_image' )}
@@ -19,7 +21,7 @@
                 {rdelim}
             </style>
             {/foreach}     
-                <div id="slider">           
+                <div id="slider_{$object.main_node_id}">           
                 {def $children=fetch_alias( 'children', hash( 'parent_node_id',$object.main_node_id,
                                                               'sort_by', $object.sort_array,
                                                               'class_filter_type', 'include',
@@ -33,7 +35,7 @@
                          alt=""
                          {if $child.data_map.image.content.alternative_text|ne("")}title="#htmlcaption{$i}"{/if}
                         {*$child.data_map.image.content[nivoslider_full].url|ezurl('no','full')*}
-                        src="{$child.data_map.image.content.nivoslider_embed.full_path} />
+                        src="{$child.data_map.image.content.nivoslider_embed.full_path}" />
                     {if $child.data_map.url.content|ne("")}</a>{/if}
                         
                     {if $child.data_map.image.content.alternative_text|ne("")}
@@ -47,8 +49,9 @@
         {/if}   
     
         <script type="text/javascript">
-            $(window).load(function() {ldelim}
-                $('#slider').nivoSlider(
+            //<![CDATA[
+            jQuery(document).ready(function($){ldelim}
+                $('#slider_{$object.main_node_id}').nivoSlider(
                     {ldelim}
                     effect : '{attribute_view_gui attribute=$object.data_map.effect}',       
                     slices : {attribute_view_gui attribute=$object.data_map.slices},
@@ -80,6 +83,7 @@
                     {rdelim}                
                 );
             {rdelim});
+            //]]>
         </script>
         
    

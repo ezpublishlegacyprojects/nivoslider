@@ -15,16 +15,29 @@
     In administrator user interface, click 'setup' tab->'extensions' menu, select 'nivoslider', click button 'Regenerate autoload arrays for extensions',
     or in eZ Publish installation folder, run "php bin/php/ezpgenerateautoloads.php -e"
     
- 5) For each site acces ( excluding the adimn siteacces) appen to override.ini.append.php this code :
+ 5) For each front end site acces (example eng,ita,ezflow_site but EXCLUDING the adimn siteacces) appen to override.ini.append.php this code :
+
+#NIVOSLIDER START
 
 [full_nivoslider]
 Source=node/view/full.tpl
-
 MatchFile=full/nivoslider.tpl
-
 Subdir=templates
-
 Match[class_identifier]=nivoslider
+
+[embed_nivoslider]
+Source=content/view/embed.tpl
+MatchFile=embed/nivoslider.tpl
+Subdir=templates
+Match[class_identifier]=nivoslider
+
+[block_item_nivoslider]
+Source=node/view/block_item.tpl
+MatchFile=block_item/nivoslider.tpl
+Subdir=templates
+Match[class_identifier]=nivoslider
+
+#NIVOSLIDER STOP
 
  6) Clear cache
     Clear INI and template caches. (from admin 'Setup' tab or commandline)
