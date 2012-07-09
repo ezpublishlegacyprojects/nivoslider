@@ -30,7 +30,7 @@
                     {rdelim}
                 </style>
                 {/foreach}     
-                    <div id="slider">           
+                    <div id="slider_{$block.id}">           
                     {def $children=fetch_alias( 'children', hash( 'parent_node_id',$node.node_id,
                                                                   'sort_by', $node.sort_array,
                                                                   'class_filter_type', 'include',
@@ -60,7 +60,7 @@
             <script type="text/javascript">
                 //<![CDATA[
                 jQuery(document).ready(function($){ldelim}
-                    $('#slider').nivoSlider(
+                    $('#slider_{$block.id}').nivoSlider(
                         {ldelim}
                         effect : '{attribute_view_gui attribute=$node.data_map.effect}',       
                         slices : {attribute_view_gui attribute=$node.data_map.slices},
